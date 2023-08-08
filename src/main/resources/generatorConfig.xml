@@ -5,14 +5,17 @@
 
 <generatorConfiguration>
     <context id="testTables" targetRuntime="MyBatis3">
-        <commentGenerator>
-            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-            <property name="suppressAllComments" value="true" />
+<!--        <commentGenerator>-->
+<!--            &lt;!&ndash; 是否去除自动生成的注释 true：是 ： false:否 &ndash;&gt;-->
+<!--            <property name="suppressAllComments" value="false" />-->
+<!--        </commentGenerator>-->
+        <commentGenerator type="MyCommentGenerator">
+<!--            <property name="author" value="Your Name"/>-->
+<!--            <property name="dateFormat" value="yyyy/MM/dd"/>-->
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
-                        password="root">
+                        connectionURL="jdbc:mysql://localhost:3306/dfd-salary" userId="root" password="123456">
         </jdbcConnection>
         <!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
             connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg"
@@ -27,32 +30,48 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="com.mybatis.po"
-                            targetProject=".\src">
+        <javaModelGenerator targetPackage="com.dfd.entity" targetProject=".\src">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
             <!-- 从数据库返回的值被清理前后的空格 -->
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="com.mybatis.mapper"
-                         targetProject=".\src">
+        <sqlMapGenerator targetPackage="com.dfd.mapper" targetProject=".\src">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
         <!-- targetPackage：mapper接口生成的位置 -->
-        <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.mybatis.mapper"
-                             targetProject=".\src">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dfd.mapper" targetProject=".\src">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <table schema="" tableName="user"></table>
- <!--       <table schema="" tableName="orders"></table>
-        <table schema="" tableName="ordersdetail"></table>
-        <table schema="" tableName="items"></table>
-        <table schema="" tableName="aa"></table>-->
+<!--        <table schema="" tableName="alli_appeal"></table>-->
+<!--        <table schema="" tableName="attendance"></table>-->
+<!--        <table schema="" tableName="check_list"></table>-->
+<!--        <table schema="" tableName="design_plan"></table>-->
+        <table schema="" tableName="design_salary"></table>
+<!--        <table schema="" tableName="item"></table>-->
+<!--        <table schema="" tableName="item_member"></table>-->
+<!--        <table schema="" tableName="member"></table>-->
+<!--        <table schema="" tableName="item_plan"></table>-->
+<!--        <table schema="" tableName="item_salary"></table>-->
+<!--        <table schema="" tableName="performance_plan"></table>-->
+<!--        <table schema="" tableName="performance_salary"></table>-->
+<!--        <table schema="" tableName="scientific_plan"></table>-->
+<!--        <table schema="" tableName="scientific_salary"></table>-->
+<!--        <table schema="" tableName="subsidy_out"></table>-->
+<!--        <table schema="" tableName="subsidy_night"></table>-->
+<!--        <table schema="" tableName="subsidy_overtime"></table>-->
+<!--        <table schema="" tableName="subsidy_heating"></table>-->
+<!--        <table schema="" tableName="bid_plan"></table>-->
+<!--        <table schema="" tableName="bid_salary"></table>-->
+<!--        <table schema="" tableName="total_salary"></table>-->
+<!--        <table schema="" tableName="total_salary_room"></table>-->
+<!--        <table schema="" tableName="user"></table>-->
+
+
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">
             <columnOverride column="" javaType="" />
