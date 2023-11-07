@@ -15,7 +15,7 @@
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/dfd-salary" userId="root" password="123456">
+                        connectionURL="jdbc:mysql://localhost:3306/w_weekend_events" userId="root" password="123456">
         </jdbcConnection>
         <!-- <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
             connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg"
@@ -30,7 +30,7 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="com.dfd.entity" targetProject=".\src">
+        <javaModelGenerator targetPackage="com.stackshe" targetProject=".\src">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
             <!-- 从数据库返回的值被清理前后的空格 -->
@@ -47,11 +47,13 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
         <!-- 指定数据库表 -->
+        <table schema="" tableName="default_events"></table>
+
 <!--        <table schema="" tableName="alli_appeal"></table>-->
 <!--        <table schema="" tableName="attendance"></table>-->
 <!--        <table schema="" tableName="check_list"></table>-->
 <!--        <table schema="" tableName="design_plan"></table>-->
-        <table schema="" tableName="design_salary"></table>
+<!--        <table schema="" tableName="design_salary"></table>-->
 <!--        <table schema="" tableName="item"></table>-->
 <!--        <table schema="" tableName="item_member"></table>-->
 <!--        <table schema="" tableName="member"></table>-->
